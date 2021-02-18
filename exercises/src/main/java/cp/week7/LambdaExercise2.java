@@ -1,18 +1,18 @@
 package cp.week7;
 
 /**
- * 
+ *
  * @author Fabrizio Montesi
  */
 public class LambdaExercise2
 {
 	/*
 	Let's make a more advanced box.
-	
+
 	- Create a new interface BoxFunction<I,O> with a method "apply" that
 		takes something of type I (for input) as parameter and has O (for output)
 	    as return type.
-		
+
 	- Modify the Box class by adding a new method called "apply" that:
 		* Takes as parameter a BoxFunction<I,O> that requires as input something
 		  of the same type of the content of the box.
@@ -23,4 +23,27 @@ public class LambdaExercise2
 	- Modify the Box class constructor such that it throws an IllegalArgumentException
 	  if the passed content is null.
 	*/
+	static public interface BoxFunction<I, O> {
+		public O apply(I input);
+	}
+
+
+	static public class Box<T> {
+		final T content;
+
+		Box(T content) throws IllegalArgumentException {
+			if ( content == null ) {
+				throw new IllegalArgumentException();
+			}
+			this.content = content;
+		}
+
+		public T content() {
+			return content;
+		}
+
+		public<O> O apply(BoxFunction<T,O> function) {
+			return function.apply(content);
+		}
+	}
 }
