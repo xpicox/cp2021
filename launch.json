@@ -7,6 +7,22 @@
             "name": "Run Current File",
             "cwd": "${fileDirname}",
             "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Lectures App",
+            "request": "launch",
+            "mainClass": "cp.App",
+            "projectName": "lectures",
+            "cwd": "${workspaceFolder}/lectures"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercises App",
+            "request": "launch",
+            "mainClass": "cp.App",
+            "projectName": "exercises",
+            "cwd": "${workspaceFolder}/exercises"
         }
     ]
 }
