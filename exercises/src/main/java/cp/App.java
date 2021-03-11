@@ -1,6 +1,8 @@
 package cp;
 
-import cp.week9.ThreadsExercise3.*;
+import cp.week10.ThreadsExercise4;
+import cp.week10.ThreadsExercise5;
+import cp.week10.ThreadsExercise6;
 
 /**
  * Main class (entry point) of the Java Application.
@@ -14,7 +16,8 @@ public final class App {
 	public static void main( String[] args ) {
 		// FirstThread.main();
 		// Counting.main();
-		Utils.doAndMeasure(SynchronizedMap2T::main);
-		Utils.doAndMeasure(SynchronizedMap2T2::main);
+		// Utils.doAndMeasure( SequentialMap2F::main );
+		// Utils.doAndMeasure( SynchronizedMap2T::main );
+		ThreadsExercise5.main();
 	}
 }
