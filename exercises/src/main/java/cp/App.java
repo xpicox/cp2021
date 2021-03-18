@@ -18,6 +18,6 @@ public final class App {
 		// Counting.main();
 		// Utils.doAndMeasure( SequentialMap2F::main );
 		// Utils.doAndMeasure( SynchronizedMap2T::main );
-		ThreadsExercise5.main();
+		ThreadsExercise6.main();
 	}
 }
