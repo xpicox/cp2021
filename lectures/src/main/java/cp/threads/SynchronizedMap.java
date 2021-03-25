@@ -14,7 +14,7 @@ public class SynchronizedMap
 	{
 		// word -> number of times that it appears over all files
 		Map< String, Integer > occurrences = new HashMap<>();
-		
+
 		List< String > filenames = List.of(
 			"text1.txt",
 			"text2.txt",
@@ -27,9 +27,9 @@ public class SynchronizedMap
 			"text9.txt",
 			"text10.txt"
 		);
-		
+
 		CountDownLatch latch = new CountDownLatch( filenames.size() );
-		
+
 		filenames.stream()
 			.map( filename -> new Thread( () -> {
 				computeOccurrences( filename, occurrences );
@@ -42,10 +42,10 @@ public class SynchronizedMap
 		} catch( InterruptedException e ) {
 			e.printStackTrace();
 		}
-		
+
 //		occurrences.forEach( (word, n) -> System.out.println( word + ": " + n ) );
 	}
-	
+
 	private static void computeOccurrences( String filename, Map< String, Integer > occurrences )
 	{
 		try {
